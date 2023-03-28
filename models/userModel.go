@@ -1,7 +1,8 @@
 package models
 
 import(
- "go.mongodb.org/mongo-driver/bson/primitve"
+	"go.mongodb.org/mongo-driver/bson/primitive"
+   // "go.mongodb.org/mongo-driver/mongo"
  "time"
 )
 

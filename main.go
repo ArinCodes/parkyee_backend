@@ -1,12 +1,21 @@
 package main
 
 import(
+	routes "github.com/ArinCodes/parkyee_backend/routes"
 	"os"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
+	"log"
+	
 )
 
 func main(){
-	port=os.Getenv("Port")
+	err := godotenv.Load(".env")
+
+	if err != nil{
+		log.Fatal("Error loading .env file")
+	}
+	port := os.Getenv("PORT")
 
 	if port ==""{
 		port="8000"
@@ -15,8 +24,8 @@ func main(){
 	router.Use(gin.Logger())
 
 
-	router.AuthRoutes(router)
-	router.UserRoutes(router)
+	routes.AuthRoutes(router)
+	routes.UserRoutes(router)
 
 	router.GET("/api-1",func(c *gin.Context){
 		c.JSON(200,gin.H{"success":"Access granted for api-1"})

@@ -8,7 +8,7 @@ import(
 "context"
 "github.com/joho/godotenv"
 "go.mongodb.org/mongo-driver/mongo"
-"go/mongodb.org/mongo-driver/mongo/options"
+"go.mongodb.org/mongo-driver/mongo/options"
 
 )
 
@@ -38,7 +38,7 @@ MongoDb := os.Getenv("MONGODB_URL")
 
 }
 
-var Client  *mongo.client = DBinstance()
+var Client  *mongo.Client = DBinstance()
 
 func OpenCollection(client *mongo.Client , collectionName string) *mongo.Collection{
 	var collection *mongo.Collection = client.Database("").Collection(collectionName)

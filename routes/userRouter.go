@@ -1,9 +1,9 @@
 package routes
 
 import(
-	controller "parkyee_backend/controllers"
-
-	"girhub.com/gin-gonic/gin"
+	controller "github.com/ArinCodes/parkyee_backend/controllers"
+	"github.com/ArinCodes/parkyee_backend/middleware"
+	"github.com/gin-gonic/gin"
 )
 
 func UserRoutes(incomingRoutes *gin.Engine){
